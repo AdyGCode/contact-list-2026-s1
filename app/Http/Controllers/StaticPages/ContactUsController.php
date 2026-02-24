@@ -9,11 +9,11 @@ class ContactUsController extends Controller
 {
     public function index()
     {
-        return view('static_pages.index');
+        return view('static-pages.index');
     }
 
     public function thankyou()
     {
-        return view('static_pages.thank-you');
+        return view('static-pages.thank-you');
     }
 }
