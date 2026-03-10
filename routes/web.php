@@ -10,5 +10,8 @@ Route::get('/', function () {
 Route::get('contact-us', [ContactUsController::class, 'index'])
     ->name('static.contact-us');
 
+Route::post('contact-us', [ContactUsController::class, 'store'])
+    ->name('static.contact-us.store');
+
 Route::get('thank-you', [ContactUsController::class, 'thankyou'])
     ->name('static.thank-you');
