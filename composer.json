@@ -44,13 +44,13 @@
             "pnpm install",
             "pnpm run build"
         ],
-        "dev": [
-            "Composer\\Config::disableProcessTimeout",
-            "pnpm dlx concurrently -c \"#93c5fd,#c4b5fd,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"pnpm run dev\" --names='server,queue,vite'"
-        ],
-        "test": [
-            "@php artisan config:clear --ansi",
-            "@php artisan test"
+        "setup-npm": [
+            "composer install",
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php artisan key:generate",
+            "@php artisan migrate --force",
+            "npm install",
+            "npm run build"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
@@ -67,9 +67,42 @@
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
         ],
-        "pre-package-uninstall": [
-            "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
+        "dev": [
+            "Composer\\Config::disableProcessTimeout",
+            "pnpm dlx concurrently -c \"#93c5fd,#c4b5fd,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"pnpm run dev\" --names='server,queue,vite'"
+        ],
+        "dev-win": [
+            "Composer\\Config::disableProcessTimeout",
+            "pnpm dlx  concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"npm run dev\"  \"mailpit --smtp=0.0.0.0:2525\" --names=server,queue,vite,mailpit"
+        ],
+        "dev-win-npm": [
+            "Composer\\Config::disableProcessTimeout",
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"npm run dev\"  \"mailpit --smtp=0.0.0.0:2525\" --names=server,queue,vite,mailpit"
+        ],
+        "dev-linux": [
+            "clear",
+            "Composer\\Config::disableProcessTimeout",
+            "pnpm dlx  concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74,#74fdc5\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" \"mailpit --smtp=0.0.0.0:2525\" --names=server,queue,logs,vite,mailpit"
+        ],
+        "test": [
+            "@php artisan config:clear --ansi",
+            "@php artisan test"
+        ],
+        "phpstan": [
+            "@php artisan config:clear --ansi",
+            "./vendor/bin/phpstan analyse --memory-limit=2G"
         ]
+    },
+    "scripts-descriptions": {
+        "setup": "Installs composer packages, copy .env.example, generate key, force migration, install node packages using pnpm",
+        "dev": "Run Dev Env: omits Laravel Pail, MailPit",
+        "dev-win": "Run Dev Env: omits Laravel Pail.",
+        "dev-linux": "Run Dev Env: includes MailPit, Laravel Pail.",
+        "phpstan": "Run PHPStan static analysis against your application.",
+        "post-autoload-dump": "Executes automatically after a composer dump-autoload",
+        "post-update-cmd": "Executes automatically after a composer update",
+        "post-root-package-install": "Executes automatically ONLY main Laravel package installation",
+        "post-create-project-cmd": "Executes automatically ONLY after initial create project"
     },
     "extra": {
         "laravel": {
