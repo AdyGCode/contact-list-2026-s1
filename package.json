@@ -7,11 +7,20 @@
         "dev": "vite"
     },
     "devDependencies": {
+        "@tailwindcss/forms": "^0.5.11",
+        "@tailwindcss/postcss": "^4.2.1",
         "@tailwindcss/vite": "^4.2.1",
+        "alpinejs": "^3.15.8",
+        "autoprefixer": "^10.4.27",
         "axios": "^1.13.6",
         "concurrently": "^9.2.1",
         "laravel-vite-plugin": "^2.1.0",
         "tailwindcss": "^4.2.1",
         "vite": "^7.3.1"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^7.2.0",
+        "@midudev/tailwind-animations": "^1.0.1",
+        "chart.js": "^4.5.1"
     }
 }

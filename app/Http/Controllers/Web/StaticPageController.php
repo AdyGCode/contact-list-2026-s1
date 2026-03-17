@@ -22,7 +22,7 @@ class StaticPageController extends Controller
 
     public function contact(): View
     {
-        return view('web.static.contact');
+        return view('web.static.contact-us');
     }
 
     public function privacy(): View

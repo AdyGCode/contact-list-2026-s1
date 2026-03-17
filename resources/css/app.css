@@ -9,3 +9,158 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+
+@theme {
+    --color-php-50: oklch(0.957 0.009 286.35);
+    --color-php-100: oklch(0.922 0.016 286.15);
+    --color-php-200: oklch(0.837 0.035 283.83);
+    --color-php-300: oklch(0.761 0.051 282.61);
+    --color-php-400: oklch(0.685 0.069 281.57);
+    --color-php-500: oklch(0.603 0.087 280.38);
+    --color-php-600: oklch(0.515 0.102 278.82);
+    --color-php-700: oklch(0.419 0.092 278.52);
+    --color-php-800: oklch(0.323 0.071 278.44);
+    --color-php-900: oklch(0.236 0.052 278.46);
+    --color-php-950: oklch(0.179 0.039 279.44);
+}
+
+@theme {
+    --color-laravel-50: oklch(0.967 0.016 17.55);
+    --color-laravel-100: oklch(0.928 0.037 19.95);
+    --color-laravel-200: oklch(0.854 0.079 19.81);
+    --color-laravel-300: oklch(0.782 0.127 21.53);
+    --color-laravel-400: oklch(0.711 0.182 24);
+    --color-laravel-500: oklch(0.644 0.242 29.36);
+    --color-laravel-600: oklch(0.542 0.215 30.45);
+    --color-laravel-700: oklch(0.444 0.176 30.42);
+    --color-laravel-800: oklch(0.344 0.136 30.39);
+    --color-laravel-900: oklch(0.245 0.097 30.29);
+    --color-laravel-950: oklch(0.196 0.078 30.27);
+}
+
+@theme {
+    --color-nodejs-50: oklch(0.95 0.07 141.28);
+    --color-nodejs-100: oklch(0.899 0.165 139.66);
+    --color-nodejs-200: oklch(0.812 0.169 139.38);
+    --color-nodejs-300: oklch(0.727 0.151 139.4);
+    --color-nodejs-400: oklch(0.643 0.133 139.42);
+    --color-nodejs-500: oklch(0.558 0.116 139.53);
+    --color-nodejs-600: oklch(0.474 0.099 139.68);
+    --color-nodejs-700: oklch(0.389 0.081 139.49);
+    --color-nodejs-800: oklch(0.303 0.063 139.15);
+    --color-nodejs-900: oklch(0.221 0.047 140.02);
+    --color-nodejs-950: oklch(0.174 0.037 140.3);
+}
+
+@theme {
+    --color-mariadb-50: oklch(0.965 0.02 233.81);
+    --color-mariadb-100: oklch(0.929 0.041 233.32);
+    --color-mariadb-200: oklch(0.846 0.096 229.26);
+    --color-mariadb-300: oklch(0.774 0.146 224.71);
+    --color-mariadb-400: oklch(0.698 0.132 224.82);
+    --color-mariadb-500: oklch(0.629 0.119 225.13);
+    --color-mariadb-600: oklch(0.554 0.104 224.27);
+    --color-mariadb-700: oklch(0.485 0.092 225.25);
+    --color-mariadb-800: oklch(0.418 0.079 224.09);
+    --color-mariadb-900: oklch(0.342 0.064 224.23);
+    --color-mariadb-950: oklch(0.306 0.058 224.75);
+}
+
+@theme {
+    --color-signal-50: oklch(0.949 0.025 285.95);
+    --color-signal-100: oklch(0.899 0.05 284.13);
+    --color-signal-200: oklch(0.807 0.098 283.34);
+    --color-signal-300: oklch(0.707 0.154 280.47);
+    --color-signal-400: oklch(0.611 0.211 276.66);
+    --color-signal-500: oklch(0.521 0.264 270.53);
+    --color-signal-600: oklch(0.451 0.286 264.62);
+    --color-signal-700: oklch(0.379 0.24 264.67);
+    --color-signal-800: oklch(0.304 0.192 264.65);
+    --color-signal-900: oklch(0.22 0.14 264.79);
+    --color-signal-950: oklch(0.175 0.112 264.21);
+}
+
+@theme {
+    --color-whatsapp-50: oklch(0.969 0.049 150.56);
+    --color-whatsapp-100: oklch(0.946 0.084 150.91);
+    --color-whatsapp-200: oklch(0.893 0.19 150.11);
+    --color-whatsapp-300: oklch(0.846 0.224 149.83);
+    --color-whatsapp-400: oklch(0.804 0.213 149.68);
+    --color-whatsapp-500: oklch(0.761 0.201 149.74);
+    --color-whatsapp-600: oklch(0.637 0.168 149.77);
+    --color-whatsapp-700: oklch(0.512 0.135 149.86);
+    --color-whatsapp-800: oklch(0.385 0.101 149.95);
+    --color-whatsapp-900: oklch(0.261 0.07 149.63);
+    --color-whatsapp-950: oklch(0.191 0.05 149.78);
+}
+
+@theme {
+    --color-telegram-50: oklch(0.965 0.016 245.06);
+    --color-telegram-100: oklch(0.939 0.029 248.13);
+    --color-telegram-200: oklch(0.876 0.061 246.29);
+    --color-telegram-300: oklch(0.806 0.102 242.11);
+    --color-telegram-400: oklch(0.744 0.144 237.28);
+    --color-telegram-500: oklch(0.685 0.139 236.78);
+    --color-telegram-600: oklch(0.573 0.117 237.19);
+    --color-telegram-700: oklch(0.461 0.094 237.27);
+    --color-telegram-800: oklch(0.36 0.073 236.57);
+    --color-telegram-900: oklch(0.247 0.051 237.38);
+    --color-telegram-950: oklch(0.186 0.039 237.79);
+}
+
+@theme {
+  --color-discord-50: oklch(0.958 0.019 282.83);
+  --color-discord-100: oklch(0.915 0.039 284.05);
+  --color-discord-200: oklch(0.831 0.078 282.16);
+  --color-discord-300: oklch(0.748 0.121 280.45);
+  --color-discord-400: oklch(0.657 0.167 277.72);
+  --color-discord-500: oklch(0.577 0.209 273.85);
+  --color-discord-600: oklch(0.495 0.251 267.74);
+  --color-discord-700: oklch(0.415 0.216 266.98);
+  --color-discord-800: oklch(0.324 0.169 266.95);
+  --color-discord-900: oklch(0.234 0.122 267.28);
+  --color-discord-950: oklch(0.184 0.096 266.86);
+}
+
+@theme {
+    --color-facebook-50: oklch(0.958 0.02 279.99);
+    --color-facebook-100: oklch(0.915 0.041 278.08);
+    --color-facebook-200: oklch(0.824 0.088 275.81);
+    --color-facebook-300: oklch(0.738 0.135 273.36);
+    --color-facebook-400: oklch(0.646 0.188 268.26);
+    --color-facebook-500: oklch(0.564 0.24 261.15);
+    --color-facebook-600: oklch(0.477 0.205 260.89);
+    --color-facebook-700: oklch(0.398 0.17 260.82);
+    --color-facebook-800: oklch(0.307 0.133 261.03);
+    --color-facebook-900: oklch(0.231 0.098 260.79);
+    --color-facebook-950: oklch(0.181 0.077 260.83);
+}
+
+@theme {
+    --color-linkedin-50: oklch(0.957 0.02 254.91);
+    --color-linkedin-100: oklch(0.912 0.043 255.92);
+    --color-linkedin-200: oklch(0.817 0.095 250.42);
+    --color-linkedin-300: oklch(0.73 0.151 244.23);
+    --color-linkedin-400: oklch(0.635 0.15 241.9);
+    --color-linkedin-500: oklch(0.546 0.13 242.27);
+    --color-linkedin-600: oklch(0.462 0.111 242.6);
+    --color-linkedin-700: oklch(0.385 0.092 242.21);
+    --color-linkedin-800: oklch(0.3 0.071 241.94);
+    --color-linkedin-900: oklch(0.222 0.054 243.44);
+    --color-linkedin-950: oklch(0.175 0.042 242.39);
+}
+
+@theme {
+    --color-github-50: #ebebeb;
+    --color-github-100: #dadada;
+    --color-github-200: oklch(0.777 0.001 18.42);
+    --color-github-300: oklch(0.665 0.002 17.73);
+    --color-github-400: oklch(0.544 0.004 17.54);
+    --color-github-500: oklch(0.43 0.004 17.51);
+    --color-github-600: oklch(0.319 0.003 17.51);
+    --color-github-700: oklch(0.206 0.002 17.52);
+    --color-github-800: #111111;
+    --color-github-900: #0b0b0b;
+    --color-github-950: #040404;
+}
