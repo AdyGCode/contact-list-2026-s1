@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web\StaticPages;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreContactUsRequest;
 use App\Models\Message;
 use App\Models\Topic;
 use Illuminate\Http\Request;
@@ -23,16 +24,11 @@ class ContactUsController extends Controller
         return view('web.static.thank-you');
     }
 
-    public function store(Request $request)
+    public function store(StoreContactUsRequest $request)
     {
         // Validate data
-        $validated = $request->validate([
-            'name' => ['required'],
-            'email' => ['required','email'],
-            'subject' => ['required','max:128'],
-            'message' => ['required'],
-            'topic_id' => ['required','integer'],
-        ]);
+        $validated = $request->validated();
+
 
         // Store contact message
         Message::create([

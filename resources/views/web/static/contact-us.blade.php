@@ -3,60 +3,63 @@
     Contact Us
 </h1>
 
-<form action="{{ route('static.contact-us.store') }}"
+<form action="{{ route('web.static.contact-us.store') }}"
       method="post"
       class="mx-auto max-w-md space-y-4 rounded-lg border border-gray-300 bg-gray-100 p-6">
     @csrf
     <div>
-        <label class="block text-sm font-medium text-gray-900" for="name">Name</label>
+        <x-input-label for="name">Name</x-input-label>
 
-        <input class="bg-white p-1 mt-1 w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:outline-none"
+        <x-text-input class="block mt-1 w-full bg-white"
                id="name"
                name="name"
                type="text"
-               placeholder="Your name">
+               placeholder="Your name" />
         <div data-lastpass-icon-root=""
              style="position: relative !important; height: 0px !important; width: 0px !important; display: initial !important; float: left !important;"></div>
+    <x-input-error :messages="$errors->get('name')" class="mt-2"/>
     </div>
 
-
     <div>
-        <label class="block text-sm font-medium text-gray-900" for="email">Email</label>
+        <x-input-label  for="email">Email</x-input-label>
 
-        <input class="bg-white p-1 mt-1 w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:outline-none"
+        <x-text-input class="block mt-1 w-full bg-white"
                id="email"
                name="email"
                type="email"
-               placeholder="Your email">
+               placeholder="Your email" />
+    <x-input-error :messages="$errors->get('email')" class="mt-2"/>
     </div>
 
     <div>
-        <label class="block text-sm font-medium text-gray-900" for="topic">Topic</label>
+        <x-input-label for="topic">Topic</x-input-label>
 
-        <select class="bg-white p-1 mt-1 w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:outline-none"
+        <select class="block mt-1 w-full bg-white"
                 id="topic"
                 name="topic">
-            <option value="">Select a topic</option>
+            <option value="-1">Select a topic</option>
             @foreach($topics as $topic)
                 <option value="{{ $topic->id }}">
                     {{ $topic->name }}
                 </option>
             @endforeach
         </select>
+        <x-input-error :messages="$errors->get('topic')" class="mt-2" />
     </div>
 
     <div>
-        <label class="block text-sm font-medium text-gray-900" for="subject">Subject</label>
+        <x-input-label for="subject">Subject</x-input-label>
 
-        <input class="bg-white p-1 mt-1 w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:outline-none"
+        <x-text-input class="block mt-1 w-full bg-white"
                id="subject"
                name="subject"
                type="text"
-               placeholder="Message subject">
+               placeholder="Message subject" />
+        <x-input-error :messages="$errors->get('subject')" class="mt-2" />
     </div>
 
     <div>
-        <label class="block text-sm font-medium text-gray-900" for="message">Message</label>
+        <x-input-label for="message">Message</x-input-label>
 
         <textarea
             class="bg-white p-1 mt-1 w-full resize-none rounded-lg border-gray-300 focus:border-indigo-500 focus:outline-none"
@@ -64,6 +67,7 @@
             name="message"
             rows="4"
             placeholder="Your message"></textarea>
+        <x-input-error :messages="$errors->get('message')" class="mt-2" />
     </div>
 
     <button
@@ -73,7 +77,7 @@
     </button>
 </form>
 
-<a href="{{ route('static.thank-you') }}"
+<a href="{{ route('web.static.thank-you') }}"
    class="text-xl p-1 bg-blue-100">Thank You Test Link</a>
 
 </x-app-layout>
