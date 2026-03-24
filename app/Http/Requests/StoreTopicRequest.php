@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreContactUsRequest extends FormRequest
+class StoreTopicRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,19 @@ class StoreContactUsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required'],
-            'email' => ['required', 'email'],
-            'subject' => ['required', 'max:128'],
-            'message' => ['required', 'min:20', 'max:1024'],
-            'topic_id' => ['required', 'exists:topics'],
+            'name'=>[
+                'required',
+                'string',
+                'max:16'
+            ],
+            'description'=>[
+                'nullable',
+                'string'
+            ],
+            'available'=>[
+                'required',
+                'boolean'
+            ],
         ];
     }
 }
