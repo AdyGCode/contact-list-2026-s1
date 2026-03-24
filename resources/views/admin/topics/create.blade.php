@@ -21,11 +21,17 @@
 
                 <div>
                     <x-input-label for="name">Name:</x-input-label>
+
                     <x-text-input id="name"
                                   name="name"
+                                  type="text"
                                   placeholder="Name of topic"
-                                  value="{{ old('name')??'' }}" />
-                    <x-input-error messages="{{$errors->name}}" />
+                                  value="{{ old('name')??'' }}"
+                                  autocomplete="name"
+                    />
+
+                    <x-input-error messages="{{$errors->get('name')}}"
+                                   class="mt-2"/>
                 </div>
 
                 <x-primary-button type="submit">Save</x-primary-button>

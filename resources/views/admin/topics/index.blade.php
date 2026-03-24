@@ -10,6 +10,8 @@
             <h3 class="text-2xl font-bold text-zinc-700">
                 Topics
             </h3>
+
+            <x-primary-link-button href="{{ route('admin.topics.create') }}">Add Topic</x-primary-link-button>
         </header>
 
         <div class="overflow-x-auto rounded border border-gray-300 shadow-sm">
