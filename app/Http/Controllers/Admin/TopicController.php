@@ -37,7 +37,12 @@ class TopicController extends Controller
      */
     public function store(StoreTopicRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        Topic::create($validated);
+
+        return redirect('admin.topics.index')
+            ->with('status', 'Topic Created');
     }
 
     /**

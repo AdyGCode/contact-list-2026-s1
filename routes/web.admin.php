@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth', 'verified'])
     ->prefix('admin')
-    ->name('admin.')
-    ->group(function () {
+            ->name('admin.')
+            ->group(function () {
 
         // URL base: http://HOSTNAME/admin/topics
         // Route Names: admin.topics.*

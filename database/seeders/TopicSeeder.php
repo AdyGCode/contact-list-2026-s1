@@ -41,7 +41,9 @@ class TopicSeeder extends Seeder
         ];
 
         foreach($seedTopics as $seedTopic){
-            Topic::create($seedTopic);
+            if (! Topic::where('name', $seedTopic['name'])) {
+                Topic::create($seedTopic);
+            }
         }
 
     }

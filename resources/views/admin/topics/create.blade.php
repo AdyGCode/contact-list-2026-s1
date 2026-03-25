@@ -30,7 +30,7 @@
                                   autocomplete="name"
                     />
 
-                    <x-input-error messages="{{$errors->get('name')}}"
+                    <x-input-error messages="{{ $errors->get('name')[0]??'' }}"
                                    class="mt-2"/>
                 </div>
 
