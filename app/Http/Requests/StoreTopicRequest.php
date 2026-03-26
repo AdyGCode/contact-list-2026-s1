@@ -12,7 +12,7 @@ class StoreTopicRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return auth()->check();
     }
 
     /**
@@ -23,19 +23,39 @@ class StoreTopicRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>[
+            'name' => [
                 'required',
                 'string',
                 'max:16'
             ],
-            'description'=>[
+            'description' => [
                 'nullable',
                 'string'
             ],
-            'available'=>[
+            'available' => [
                 'required',
                 'boolean'
             ],
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'required' => 'Please give a value for :attribute',
+            'nullable' => 'You may leave :attribute empty',
+            'string' => ':attribute must contain text',
+            'max' => 'Maximum length of :attribute is :max',
+        ];
+    }
+
+    protected function prepareForValidation(): void
+    {
+        if (!$this->filled('available')) {
+            $this->merge([
+                'available' => false,
+            ]);
+        }
+    }
+
 }

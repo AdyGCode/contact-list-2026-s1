@@ -6,7 +6,6 @@
                         border
                         border-zinc-300 focus:border-sky-300
                         focus:ring focus:ring-sky-200
-                        rounded-sm shadow-sm',
+                        rounded-md shadow-sm',
             'rows' => $rows]) }}
 >{{ $message ?? null }}</textarea>
-

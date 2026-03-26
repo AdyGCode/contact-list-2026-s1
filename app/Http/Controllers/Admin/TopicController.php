@@ -41,7 +41,7 @@ class TopicController extends Controller
 
         Topic::create($validated);
 
-        return redirect('admin.topics.index')
+        return redirect(route('admin.topics.index'))
             ->with('status', 'Topic Created');
     }
 

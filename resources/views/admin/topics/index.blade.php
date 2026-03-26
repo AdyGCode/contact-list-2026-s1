@@ -33,8 +33,27 @@
                     <tr class="*:text-gray-900 *:first:font-medium">
                         <td class="px-3 py-2 whitespace-nowrap">{{ $loop->index+1 }}</td>
                         <td class="px-3 py-2 whitespace-nowrap">{{ $topic->name }}</td>
-                        <td class="px-3 py-2 whitespace-nowrap">{{ $topic->description }}</td>
-                        <td class="px-3 py-2 whitespace-nowrap">Show Edit Delete</td>
+                        <td class="px-3 py-2 whitespace-nowrap w-full">{{ $topic->description }}</td>
+                        <td class="px-3 py-2 whitespace-nowrap flex gap-2 shrink">
+                            <x-primary-link-button href="{{ route('admin.topics.index', $topic) }}"
+                                                   class="hover:bg-green-800!">
+                                <i class="fa-solid fa-eye"></i>
+                                <span class="sr-only">Show</span>
+                            </x-primary-link-button>
+                            <x-primary-link-button href="{{ route('admin.topics.index', $topic) }}"
+                                                   class="hover:bg-amber-800!">
+                                <i class="fa-solid fa-edit"></i>
+                                <span class="sr-only">Edit</span>
+                            </x-primary-link-button>
+                            <form action="{{ route('admin.topics.index', $topic) }}"
+                                  method="post">
+                                @csrf
+                                @method('delete')
+                                <x-secondary-button class="hover:bg-red-800! hover:text-white!">
+                                    <i class="fa-solid fa-trash"></i>
+                                    <span class="sr-only">Delete</span></x-secondary-button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
 
