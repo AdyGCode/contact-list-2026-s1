@@ -29,4 +29,9 @@ class Topic extends Model
     protected function casts(): array{
         return [];
     }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 }

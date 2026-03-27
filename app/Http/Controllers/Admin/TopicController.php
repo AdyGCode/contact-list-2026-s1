@@ -16,6 +16,7 @@ class TopicController extends Controller
     public function index()
     {
         $topics = Topic::orderBy('name')
+            ->with('messages')
             ->paginate(3);
 
         return view('admin.topics.index')
@@ -48,9 +49,11 @@ class TopicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Topic $topic)
     {
-        //
+        return view('admin.topics.show')
+            ->with('topic', $topic)
+            ->with('messages');
     }
 
     /**

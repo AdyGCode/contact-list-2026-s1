@@ -14,7 +14,7 @@ Route::middleware(['auth', 'verified'])
         // URL base: http://HOSTNAME/admin/topics
         // Route Names: admin.topics.*
         Route::resource('topics', TopicController::class)
-            ->except(['show', 'edit', 'update', 'destroy']);
+            ->except(['edit', 'update', 'destroy']);
 
         Route::get('/', [AdminController::class, 'index'])
             ->name('index');

@@ -35,7 +35,7 @@
                         <td class="px-3 py-2 whitespace-nowrap">{{ $topic->name }}</td>
                         <td class="px-3 py-2 whitespace-nowrap w-full">{{ $topic->description }}</td>
                         <td class="px-3 py-2 whitespace-nowrap flex gap-2 shrink">
-                            <x-primary-link-button href="{{ route('admin.topics.index', $topic) }}"
+                            <x-primary-link-button href="{{ route('admin.topics.show', $topic) }}"
                                                    class="hover:bg-green-800!">
                                 <i class="fa-solid fa-eye"></i>
                                 <span class="sr-only">Show</span>
