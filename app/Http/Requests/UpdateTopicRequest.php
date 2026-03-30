@@ -2,8 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Topic;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateTopicRequest extends FormRequest
 {
@@ -12,7 +14,7 @@ class UpdateTopicRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -23,7 +25,43 @@ class UpdateTopicRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => [
+                'sometimes',
+                'string',
+                'max:16',
+                Rule::unique(Topic::class)
+                    ->ignoreModel($this->route('topic'))
+            ],
+            'description' => [
+                'nullable',
+                'string'
+            ],
+            'available' => [
+                'required',
+                'boolean'
+            ],
         ];
     }
+
+
+    public function messages(): array
+    {
+        return [
+            'required' => 'Please give a value for :attribute',
+            'nullable' => 'You may leave :attribute empty',
+            'string' => ':attribute must contain text',
+            'max' => 'Maximum length of :attribute is :max',
+            'unique' => 'The :attribute has already been taken.',
+        ];
+    }
+
+    protected function prepareForValidation(): void
+    {
+        if (!$this->filled('available')) {
+            $this->merge([
+                'available' => false,
+            ]);
+        }
+    }
+
 }

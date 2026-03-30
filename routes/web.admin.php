@@ -13,8 +13,7 @@ Route::middleware(['auth', 'verified'])
 
         // URL base: http://HOSTNAME/admin/topics
         // Route Names: admin.topics.*
-        Route::resource('topics', TopicController::class)
-            ->except(['edit', 'update', 'destroy']);
+        Route::resource('topics', TopicController::class);
 
         Route::get('/', [AdminController::class, 'index'])
             ->name('index');

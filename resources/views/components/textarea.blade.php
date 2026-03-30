@@ -1,4 +1,4 @@
-@props(['rows' => 3, 'message'=>null])
+@props(['rows' => 3, 'value'=>null])
 
 <textarea
       {{ $attributes->merge([
@@ -8,4 +8,4 @@
                         focus:ring focus:ring-sky-200
                         rounded-md shadow-sm',
             'rows' => $rows]) }}
->{{ $message ?? null }}</textarea>
+>{{ $value ?? null }}</textarea>

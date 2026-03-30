@@ -45,19 +45,19 @@
             <footer class="mt-2 gap-2 flex justify-end content-between">
                 <x-primary-link-button href="{{ route('admin.topics.index') }}"
                                        class="hover:bg-green-800!">
-                    <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-list"></i>
                     <span class="sr-only">All</span>
                 </x-primary-link-button>
-                <x-primary-link-button href="{{ route('admin.topics.index', $topic) }}"
+                <x-primary-link-button href="{{ route('admin.topics.edit', $topic) }}"
                                        class="hover:bg-amber-800!">
                     <i class="fa-solid fa-edit"></i>
                     <span class="sr-only">Edit</span>
                 </x-primary-link-button>
-                <form action="{{ route('admin.topics.index', $topic) }}"
+                <form action="{{ route('admin.topics.destroy', $topic) }}"
                       method="post">
                     @csrf
                     @method('delete')
-                    <x-secondary-button class="hover:bg-red-800! hover:text-white!">
+                    <x-secondary-button class="hover:bg-red-800! hover:text-white!" type="submit">
                         <i class="fa-solid fa-trash"></i>
                         <span class="sr-only">Delete</span></x-secondary-button>
                 </form>

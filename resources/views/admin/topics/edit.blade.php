@@ -8,17 +8,18 @@
     <section class="py-4 mx-8 space-y-4 ">
         <header>
             <h3 class="text-2xl font-bold text-zinc-700">
-                Add New Topic
+                Edit Topic
             </h3>
         </header>
 
         <div class="overflow-x-auto rounded border border-gray-300 shadow-sm">
 
-            <form action="{{ route('admin.topics.store') }}"
+            <form action="{{ route('admin.topics.update', $topic) }}"
                   method="post"
                   class="flex flex-col p-4 bg-white">
 
                 @csrf
+                @method('put')
 
                 <div class="p-4 w-1/2">
                     <x-input-label for="name">
@@ -29,7 +30,7 @@
                                   name="name"
                                   type="text"
                                   placeholder="Name of topic"
-                                  value="{{ old('name')??'' }}"
+                                  value="{{ old('name')?? $topic->name }}"
                                   autocomplete="name"
                                   class="w-full"
                     />
@@ -46,7 +47,7 @@
                     <x-textarea id="description"
                                 name="description"
                                 type="text"
-                                :value="old('description')??''"
+                                :value="old('description')??$topic->description"
                                 placeholder="Topic Description"
                                 autocomplete="description"
                     />
@@ -68,6 +69,7 @@
                                value="1"
                                id="available"
                                name="available"
+                               @if($topic->available) checked @endif
                                class="peer sr-only">
                         <span
                             class="absolute inset-y-0 inset-s-0 m-1 size-6 rounded-full

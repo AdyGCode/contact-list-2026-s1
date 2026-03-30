@@ -26,7 +26,8 @@ class StoreTopicRequest extends FormRequest
             'name' => [
                 'required',
                 'string',
-                'max:16'
+                'max:16',
+                'unique:topics'
             ],
             'description' => [
                 'nullable',
@@ -46,6 +47,7 @@ class StoreTopicRequest extends FormRequest
             'nullable' => 'You may leave :attribute empty',
             'string' => ':attribute must contain text',
             'max' => 'Maximum length of :attribute is :max',
+            'unique' => 'The :attribute has already been taken.',
         ];
     }
 
