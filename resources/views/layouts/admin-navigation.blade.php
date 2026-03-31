@@ -23,10 +23,38 @@
                 {{ __('Dashboard') }}
             </x-side-nav-link>
 
-            <x-side-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.*')">
+            <x-side-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
                 <i class="fa-solid fa-cog group-hover:text-zinc-500"></i>
                 {{ __('Admin Home') }}
             </x-side-nav-link>
+
+            <hr class="text-zinc-300">
+
+            <x-side-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                <i class="fa-solid fa-contact-card group-hover:text-zinc-500"></i>
+                {{ __('Contacts') }}
+            </x-side-nav-link>
+
+            <x-side-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.messages.*')">
+                <i class="fa-solid fa-message group-hover:text-zinc-500"></i>
+                {{ __('Messages') }}
+            </x-side-nav-link>
+
+            <x-side-nav-link :href="route('admin.topics.index')" :active="request()->routeIs('admin.topics.*')">
+                <i class="fa-solid fa-laugh group-hover:text-zinc-500"></i>
+                {{ __('Topics') }}
+            </x-side-nav-link>
+
+            <x-side-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                <i class="fa-solid fa-plane-arrival group-hover:text-zinc-500"></i>
+                {{ __('Another Link') }}
+            </x-side-nav-link>
+
+            <x-side-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                <i class="fa-solid fa-plane-departure group-hover:text-zinc-500"></i>
+                {{ __('Another Link') }}
+            </x-side-nav-link>
+
 
             <hr class="text-zinc-300">
 
@@ -50,7 +78,8 @@
 
                 <section class="mt-2 space-y-1">
 
-                    <x-side-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.*')" class="px-10 py-2">
+                    <x-side-nav-link :href="route('admin.users.index')" :active="request()->routeIs('admin.users.*')"
+                                     class="px-10 py-2">
                         {{ __('Accounts') }}
                     </x-side-nav-link>
 
@@ -71,68 +100,9 @@
             </details>
 
             <x-side-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                <i class="fa-solid fa-laugh group-hover:text-zinc-500"></i>
-                {{ __('Jokes') }}
+                <i class="fa-solid fa-user-secret group-hover:text-zinc-500"></i>
+                {{ __('Roles') }}
             </x-side-nav-link>
-
-            <x-side-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                <i class="fa-solid fa-cat group-hover:text-zinc-500"></i>
-                {{ __('Categories') }}
-            </x-side-nav-link>
-
-            <x-side-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                <i class="fa-solid fa-list group-hover:text-zinc-500"></i>
-                {{ __('ToDos') }}
-            </x-side-nav-link>
-
-            <x-side-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                <i class="fa-solid fa-passport group-hover:text-zinc-500"></i>
-                {{ __('Passengers') }}
-            </x-side-nav-link>
-
-            <x-side-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                <i class="fa-solid fa-plane-arrival group-hover:text-zinc-500"></i>
-                {{ __('Another Link') }}
-            </x-side-nav-link>
-
-            <x-side-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                <i class="fa-solid fa-plane-departure group-hover:text-zinc-500"></i>
-                {{ __('Another Link') }}
-            </x-side-nav-link>
-
-
-            <hr class="text-zinc-300">
-
-
-            <details  class="group [&_summary::-webkit-details-marker]:hidden">
-                <summary
-                    class="flex cursor-pointer items-center justify-between px-4 py-2
-                         text-zinc-500 hover:text-zinc-700
-                         hover:bg-zinc-200
-                          border-0 border-l-4 border-transparent hover:border-zinc-400
-                         transition duration-250"
-                >
-                        <span class="text-sm font-medium hover:text-zinc-500 transition duration-250">
-                            <i class="fa-solid fa-shield"></i>
-                            {{ __('Security') }}
-                        </span>
-
-                    <span class="shrink-0 transition duration-300 group-open:-rotate-180">
-                          <i class="fa-solid fa-chevron-down text-sm"></i>
-                        </span>
-                </summary>
-
-                <section class="mt-2 space-y-1">
-                    <x-side-nav-link :href="route('home')" :active="request()->routeIs('home')" class="px-10 py-2">
-                        {{ __('Roles') }}
-                    </x-side-nav-link>
-
-                    <x-side-nav-link :href="route('home')" :active="request()->routeIs('home')" class="px-10 py-2">
-                        {{ __('Permissions') }}
-                    </x-side-nav-link>
-                </section>
-
-            </details>
 
         </section>
     </div>

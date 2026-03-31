@@ -30,6 +30,25 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Version
+    |--------------------------------------------------------------------------
+    |
+    | This value is the version of your application. This value is used when
+    | the framework needs to place the application's version in a notification
+    | or any other location as required by the application or its packages.
+    |
+    | Source - https://stackoverflow.com/a
+    | Posted by George Dimitriadis, modified by community. See post 'Timeline'
+    | for change history
+    | Retrieved 2025-12-31, License - CC BY-SA 4.0
+    */
+
+    'version' => env('APP_VERSION', '0.0.0-dev'),
+    'codename' => env('APP_CODENAME', 'ancient ant'),
+
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
     |

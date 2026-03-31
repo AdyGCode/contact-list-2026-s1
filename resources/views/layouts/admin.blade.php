@@ -17,9 +17,9 @@
 <body class="font-sans antialiased">
 <div class="min-h-screen bg-zinc-100 flex flex-row">
 
-{{--    <nav class="basic-1/4 h-screen sticky top-0">--}}
-{{--        @include('layouts/admin-navigation')--}}
-{{--    </nav>--}}
+    <nav class="basic-1/4 h-screen sticky top-0">
+        @include('layouts/admin-navigation')
+    </nav>
 
     <div class="grow flex flex-col">
 
