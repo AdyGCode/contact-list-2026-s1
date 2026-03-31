@@ -153,7 +153,8 @@
                                 </span>
                                 <span class="relative flex size-2">
                                   <span class="relative inline-flex size-2 rounded-full bg-zinc-500"></span>
-                                  <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime-400 opacity-70"></span>
+                                  <span
+                                      class="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime-400 opacity-70"></span>
                                 </span>
                             </a>
                         </li>

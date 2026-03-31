@@ -1,4 +1,3 @@
-
 @props([
     // Core content
     'icon' => 'fa-solid fa-font-awesome',   // Font Awesome 6 classes
@@ -32,7 +31,8 @@
 <article class="group flex items-center gap-6 {{ $cardClass }} {{ $hoverCardBg }} transition ease-in-out  duration-500">
     <!-- Circular icon background -->
     <div class="flex ml-2 {{ $circleClass }} items-center justify-center rounded-full {{ $bg }} {{ $iconColor }}">
-        <i class="{{ $icon }} {{ $iconSize }} transition-transform  ease-in-out duration-500 {{ $hoverIcon }}" aria-hidden="true"></i>
+        <i class="{{ $icon }} {{ $iconSize }} transition-transform  ease-in-out duration-500 {{ $hoverIcon }}"
+           aria-hidden="true"></i>
     </div>
 
     <!-- Text content -->
@@ -44,4 +44,3 @@
         {{ $slot }}
     </div>
 </article>
-

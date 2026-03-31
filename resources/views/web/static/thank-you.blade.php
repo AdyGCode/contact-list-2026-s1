@@ -29,7 +29,7 @@
 <body>
 
 <h1 class="text-4xl text-blue-500">
-   Thank you
+    Thank you
 </h1>
 
 </body>

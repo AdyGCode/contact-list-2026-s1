@@ -13,7 +13,7 @@
             </h3>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 ">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
 
             <x-stats-card title="{{ __('Contacts') }}"
                           value="{{ $contact_count }}"
@@ -33,8 +33,7 @@
                           icon="fa-solid fa-message"
                           icon-color="text-white"/>
 
-
-            <div class="col-span-1 md:col-span-3 2xl:col-span-4"></div>
+            <div class="md:col-span-1 lg:col-span-2 2xl:col-span-3"></div>
 
             <x-stats-card title="{{ __('Unique Visitors') }}"
                           value="{{ $visitor_count }}"
@@ -53,7 +52,7 @@
             </h3>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 ">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 ">
 
             <a href="{{ route('admin.users.index') }}">
                 <x-stats-card icon="fa-solid fa-person"
@@ -69,7 +68,7 @@
                           bg="bg-green-700"
                           icon-color="text-white"/>
 
-            <div class="col-span-1 2xl:col-span-2"></div>
+            <div class="md:col-span-1 lg:col-span-2 2xl:col-span-3"></div>
 
             <x-stats-card title="{{ __('Suspended') }}"
                           value="{{ $user_suspended_count }}"
@@ -102,22 +101,22 @@
             </h3>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 ">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 ">
 
             <x-stats-card icon="fa-solid fa-info-circle"
                           title="{{ __('Version') }}"
-                          value="{{ config('app.version', 'development') }}  {{ config('app.codename', '') }}"
+                          value="{{ config('app.version', 'development') }} “{{ config('app.codename', '') }}”"
                           value-class="text-xl text-zinc-900"
                           bg="bg-slate-700"
                           icon-color="text-white"/>
 
             <x-stats-card icon="fa-solid fa-square-binary"
                           title="{{ __('Environment') }}"
-                          value="{{ config('app.env', 'Unknown') }} {{ config('app.debug',0)?'debug':'' }}"
+                          value="{{ config('app.env', 'Unknown') }}/{{ config('app.debug',0)?'debug':'' }}"
                           bg="bg-slate-700"
                           icon-color="text-white"/>
 
-            <div class="col-span-1 2xl:col-span-2"></div>
+            <div class="md:col-span-1 lg:col-span-2 2xl:col-span-3"></div>
 
             <x-stats-card icon="fa-brands fa-laravel"
                           title="{{ __('Laravel') }}"
@@ -134,7 +133,5 @@
         </div>
 
     </section>
-
-
 
 </x-admin-layout>

@@ -34,14 +34,14 @@
                             <span class="text-xs rounded-full bg-zinc-700 p-0.5 px-2 text-zinc-200">
                                 role
                             </span>
-                            </td>
+                        </td>
                         <td class="px-3 py-1 whitespace-nowrap w-1/6">
                             Suspended
                         </td>
                         <td class="px-3 py-1 whitespace-nowrap w-1/8">
                             <form action="{{ route('admin.users.destroy', $user) }}"
                                   method="post"
-                            class="grid grid-cols-3 gap-2 w-full">
+                                  class="grid grid-cols-3 gap-2 w-full">
                                 @csrf
                                 @method('delete')
 
@@ -54,7 +54,8 @@
                                    class="hover:text-blue-500 transition border p-2 text-center rounded">
                                     <i class="fa-solid fa-user-cog"></i>
                                 </a>
-                                <button type="submit" class="hover:text-red-500 transition border p-2 text-center rounded">
+                                <button type="submit"
+                                        class="hover:text-red-500 transition border p-2 text-center rounded">
                                     <i class="fa-solid fa-user-slash"></i>
                                 </button>
                             </form>
@@ -66,9 +67,9 @@
 
                 <tfoot>
                 <tr>
-                   <td colspan="4" class="p-3">
-                       {{ $users->onEachSide(2)->links("vendor.pagination.tailwind") }}
-                   </td>
+                    <td colspan="4" class="p-3">
+                        {{ $users->onEachSide(2)->links("vendor.pagination.tailwind") }}
+                    </td>
                 </tr>
                 </tfoot>
             </table>

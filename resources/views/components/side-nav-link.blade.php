@@ -2,7 +2,7 @@
 
 @php
     $classes = ($active ?? false)
-                ? 'block px-4 py-2 text-sm font-medium
+                ? 'block pl-3 pr-4 py-2 text-sm font-medium
                    text-zinc-100 hover:text-zinc-900
                    bg-zinc-600
                    hover:bg-zinc-300
@@ -10,7 +10,7 @@
                    focus:border-sky-700
                    focus:outline-none
                    transition duration-250 ease-in-out'
-                : 'block px-4 py-2 text-sm font-medium
+                : 'block pl-3 pr-4 py-2 text-sm font-medium
                    text-zinc-500 hover:text-zinc-900 focus:text-zinc-700
                    hover:bg-zinc-200
                    border-0 border-l-4 border-transparent

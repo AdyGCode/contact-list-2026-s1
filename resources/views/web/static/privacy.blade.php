@@ -11,13 +11,13 @@
             class="bg-white container mx-auto grow rounded flex flex-col gap-6 px-6 lg:px-8 overflow-hidden pb-12 shadow">
 
             <header>
-            <h2 class="text-2xl text-zinc-50 bg-zinc-600 p-6 px-6 lg:px-8 -mx-6 lg:-mx-8 uppercase">
-                InterRIoT Systems Privacy Policy
-            </h2>
+                <h2 class="text-2xl text-zinc-50 bg-zinc-600 p-6 px-6 lg:px-8 -mx-6 lg:-mx-8 uppercase">
+                    InterRIoT Systems Privacy Policy
+                </h2>
 
-            <p class="-mx-8 p-4 px-8 bg-zinc-200">
-                Last updated <strong class="font-semibold text-zinc-900">January 02, 2026</strong>
-            </p>
+                <p class="-mx-8 p-4 px-8 bg-zinc-200">
+                    Last updated <strong class="font-semibold text-zinc-900">January 02, 2026</strong>
+                </p>
             </header>
 
             <section class=" -mx-4 bg-red-500 text-white p-4 text-xl rounded overflow-hidden flex flex-col space-y-4">
