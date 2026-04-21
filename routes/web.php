@@ -1,8 +1,5 @@
 <?php
 
-use App\Http\Controllers\Web\StaticPages\ContactUsController;
-use Illuminate\Support\Facades\Route;
-
 
 require __DIR__ . '/web.static.php';
 

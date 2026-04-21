@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Web\StaticPages;
+namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreContactUsRequest;
 use App\Models\Message;
 use App\Models\Topic;
-use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
 {

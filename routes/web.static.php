@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\Web\ContactUsController;
 use App\Http\Controllers\Web\StaticPageController;
-use App\Http\Controllers\Web\StaticPages\ContactUsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [StaticPageController::class, 'home'])
