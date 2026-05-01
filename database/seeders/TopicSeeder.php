@@ -18,7 +18,7 @@ class TopicSeeder extends Seeder
             [
                 'id'=>1,
                 'name' => 'general',
-                'description' => 'General contact messages',
+                'description' => 'General Query / Unknown Topic',
                 'available' => true,
             ],
             [

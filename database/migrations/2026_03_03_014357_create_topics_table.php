@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name',16)->unique()->default("general");
             $table->string('description')->nullable();
-            $table->boolean('available')->default(false);
+            $table->boolean('available')->default(true);
             $table->timestamps();
         });
     }

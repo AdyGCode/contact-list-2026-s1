@@ -2,25 +2,22 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+#[Fillable(['name', 'description', 'available'])]
 class Topic extends Model
 {
+    /** @use HasFactory<\Database\Factories\TopicFactory> */
+     use HasFactory;
     /**
      * Mass assignable attributes (table fields)
-     *
-     */
-    protected $fillable = [
-        'name',
-        'description',
-        'available',
-    ];
-
-    /**
      * Hidden from serialisation attributes (fields)
      *
+     * Replaced by the use of PHP Attributes
+            protected $fillable = [ 'name', 'description', 'available',];
+            protected $hidden = [];
      */
-    protected $hidden = [];
 
     /**
      * Attribute (type) casting

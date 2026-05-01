@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
-use App\Models\Topic;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UpdateTopicRequest extends FormRequest
+class StoreTopicRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,11 +24,10 @@ class UpdateTopicRequest extends FormRequest
     {
         return [
             'name' => [
-                'sometimes',
+                'required',
                 'string',
                 'max:16',
-                Rule::unique(Topic::class)
-                    ->ignoreModel($this->route('topic'))
+                'unique:topics'
             ],
             'description' => [
                 'nullable',
@@ -42,7 +39,6 @@ class UpdateTopicRequest extends FormRequest
             ],
         ];
     }
-
 
     public function messages(): array
     {

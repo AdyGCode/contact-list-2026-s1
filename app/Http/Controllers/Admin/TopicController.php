@@ -3,11 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreContactUsRequest;
-use App\Http\Requests\StoreTopicRequest;
-use App\Http\Requests\UpdateTopicRequest;
+use App\Http\Requests\Admin\StoreTopicRequest;
+use App\Http\Requests\Admin\UpdateTopicRequest;
 use App\Models\Topic;
-use Illuminate\Http\Request;
 
 class TopicController extends Controller
 {
@@ -87,6 +85,6 @@ class TopicController extends Controller
         $topic->delete();
 
         return redirect(route('admin.topics.index'))
-            ->with('massage','deleted');
+            ->with('message','deleted');
     }
 }
