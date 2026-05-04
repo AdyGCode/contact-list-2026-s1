@@ -11,7 +11,7 @@ use App\Models\Topic;
 class TopicController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the topic.
      */
     public function index()
     {
@@ -24,7 +24,7 @@ class TopicController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new topic.
      *
      * http://DOMAIN/admin/topics/create
      */
@@ -34,7 +34,7 @@ class TopicController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created topic in storage.
      */
     public function store(StoreTopicRequest $request)
     {
@@ -47,7 +47,7 @@ class TopicController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified topic.
      */
     public function show(Topic $topic)
     {
@@ -57,7 +57,7 @@ class TopicController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified topic.
      */
     public function edit(Topic $topic)
     {
@@ -67,18 +67,18 @@ class TopicController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified topic in storage.
      */
     public function update(UpdateTopicRequest $request, Topic $topic)
     {
         $validated = $request->validated();
         $topic->update($validated);
         return redirect(route('admin.topics.index'))
-            ->with('message','updated');
+            ->with('message', 'updated');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified topic from storage.
      */
     public function destroy(DestroyTopicRequest $request, Topic $topic)
     {
@@ -86,6 +86,16 @@ class TopicController extends Controller
         $topic->delete();
 
         return redirect(route('admin.topics.index'))
-            ->with('message','deleted');
+            ->with('message', 'deleted');
+    }
+
+    /**
+     * Confirm topic deletion
+     */
+    public function delete(Topic $topic)
+    {
+        return view('admin.topics.delete')
+            ->with('topic', $topic)
+            ->with('messages');
     }
 }

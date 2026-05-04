@@ -3,7 +3,6 @@
 namespace App\Http\Requests\Admin;
 
 use App\Models\Topic;
-use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class DestroyTopicRequest extends FormRequest
@@ -22,7 +21,7 @@ class DestroyTopicRequest extends FormRequest
         return [
             // future‑proofed: confirmation input
             'confirmation_name' => [
-                'nullable',
+                'required',
                 'string',
             ],
         ];
@@ -35,13 +34,11 @@ class DestroyTopicRequest extends FormRequest
      */
     public function validateResolved(): void
     {
+        parent::validateResolved();
 
-        if (! $this->route('topic') instanceof Topic) {
-            abort(404, 'Topic not found Not instance');
+        if (!$this->route('topic') instanceof Topic) {
+            abort(404, 'Topic not found');
         }
-
-                parent::validateResolved();
-
     }
 
 }

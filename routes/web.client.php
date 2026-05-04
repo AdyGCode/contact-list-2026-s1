@@ -18,5 +18,5 @@ Route::middleware('auth')->group(function () {
         ->name('profile.destroy');
 });
 
-Route::get('/contacts/{$id}', [ContactController::class, 'show'])
-    ->name('web.contacts.show');
+//Route::get('/contacts/{$id}', [ContactController::class, 'show'])
+//    ->name('web.contacts.show');

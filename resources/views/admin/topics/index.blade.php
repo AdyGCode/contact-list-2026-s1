@@ -45,10 +45,9 @@
                                 <i class="fa-solid fa-edit"></i>
                                 <span class="sr-only">Edit</span>
                             </x-primary-link-button>
-                            <form action="{{ route('admin.topics.destroy', $topic) }}"
+                            <form action="{{ route('admin.topics.delete-confirm', $topic) }}"
                                   method="post">
                                 @csrf
-                                @method('delete')
                                 <x-secondary-button class="hover:bg-red-800! hover:text-white!" type="submit">
                                     <i class="fa-solid fa-trash"></i>
                                     <span class="sr-only">Delete</span></x-secondary-button>
