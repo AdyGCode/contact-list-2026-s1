@@ -60,4 +60,9 @@ class StoreTopicRequest extends FormRequest
         }
     }
 
+    protected function passedValidation(): void
+    {
+        /** do nothing */
+    }
+
 }

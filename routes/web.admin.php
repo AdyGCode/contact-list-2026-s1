@@ -18,5 +18,5 @@ Route::middleware(['auth', 'verified'])
         Route::get('/', [AdminController::class, 'index'])
             ->name('index');
 
-//        Route::resource('users', UserManagementController::class);
+        Route::resource('users', UserManagementController::class);
     });

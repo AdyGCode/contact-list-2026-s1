@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\DestroyTopicRequest;
 use App\Http\Requests\Admin\StoreTopicRequest;
 use App\Http\Requests\Admin\UpdateTopicRequest;
 use App\Models\Topic;
@@ -79,7 +80,7 @@ class TopicController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Topic $topic)
+    public function destroy(DestroyTopicRequest $request, Topic $topic)
     {
         $oldTopic = $topic;
         $topic->delete();
