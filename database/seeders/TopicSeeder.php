@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\Topic;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class TopicSeeder extends Seeder
+final class TopicSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,13 +17,13 @@ class TopicSeeder extends Seeder
 
         $seedTopics = [
             [
-                'id'=>1,
+                'id' => 1,
                 'name' => 'general',
                 'description' => 'General Query / Unknown Topic',
                 'available' => true,
             ],
             [
-                'id'=>100,
+                'id' => 100,
                 'name' => 'website errors',
                 'description' => 'Website errors',
                 'available' => true,
@@ -40,8 +41,8 @@ class TopicSeeder extends Seeder
 
         ];
 
-        foreach($seedTopics as $seedTopic){
-            if (! Topic::find($seedTopic['name'])) {
+        foreach ($seedTopics as $seedTopic) {
+            if ( ! Topic::find($seedTopic['name'])) {
                 Topic::create($seedTopic);
             }
         }

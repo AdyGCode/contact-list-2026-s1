@@ -1,15 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Controllers\Client\DashboardController;
 use App\Http\Controllers\Client\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function (): void {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])
         ->name('dashboard');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function (): void {
     Route::get('/profile', [ProfileController::class, 'edit'])
         ->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])
@@ -18,5 +20,5 @@ Route::middleware('auth')->group(function () {
         ->name('profile.destroy');
 });
 
-//Route::get('/contacts/{$id}', [ContactController::class, 'show'])
+// Route::get('/contacts/{$id}', [ContactController::class, 'show'])
 //    ->name('web.contacts.show');

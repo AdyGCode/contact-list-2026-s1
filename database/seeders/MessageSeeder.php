@@ -1,11 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class MessageSeeder extends Seeder
+final class MessageSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +18,6 @@ class MessageSeeder extends Seeder
         // 1) General message
         // 2) A website oopsie message (unavailable topic)
         // 3) A message for another available topic
-
 
     }
 }

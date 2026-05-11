@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests\Admin;
 
 use App\Models\Topic;
@@ -7,7 +9,7 @@ use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class UpdateTopicRequest extends FormRequest
+final class UpdateTopicRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,19 +32,18 @@ class UpdateTopicRequest extends FormRequest
                 'string',
                 'max:16',
                 Rule::unique(Topic::class)
-                    ->ignoreModel($this->route('topic'))
+                    ->ignoreModel($this->route('topic')),
             ],
             'description' => [
                 'nullable',
-                'string'
+                'string',
             ],
             'available' => [
                 'required',
-                'boolean'
+                'boolean',
             ],
         ];
     }
-
 
     public function messages(): array
     {
@@ -57,11 +58,10 @@ class UpdateTopicRequest extends FormRequest
 
     protected function prepareForValidation(): void
     {
-        if (!$this->filled('available')) {
+        if ( ! $this->filled('available')) {
             $this->merge([
                 'available' => false,
             ]);
         }
     }
-
 }

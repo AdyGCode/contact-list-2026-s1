@@ -1,16 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\TopicController;
 use Illuminate\Support\Facades\Route;
 
-//use App\Http\Controllers\Admin\UserManagementController;
-
+// use App\Http\Controllers\Admin\UserManagementController;
 
 Route::middleware(['auth', 'verified'])
     ->prefix('admin')
     ->name('admin.')
-    ->group(function () {
+    ->group(function (): void {
 
         // URL base: http://HOSTNAME/admin/topics
         // Route Names: admin.topics.*
@@ -24,5 +25,5 @@ Route::middleware(['auth', 'verified'])
             ->name('index');
 
         Route::resource('users', AdminController::class);
-//        Route::resource('users', UserManagementController::class);
+        //        Route::resource('users', UserManagementController::class);
     });

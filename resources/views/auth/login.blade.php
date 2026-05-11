@@ -18,7 +18,7 @@
         <div>
             <x-input-label for="email" :value="__('Email')"/>
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
-                          autofocus autocomplete="username"/>
+                          autofocus autocomplete="email"/>
             <x-input-error :messages="$errors->get('email')" class="mt-2"/>
         </div>
 
@@ -28,7 +28,7 @@
             <x-text-input id="password" class="block mt-1 w-full"
                           type="password"
                           name="password"
-                          required autocomplete="current-password"/>
+                          required autocomplete="password"/>
 
             <x-input-error :messages="$errors->get('password')" class="mt-2"/>
         </div>
@@ -36,8 +36,8 @@
         <!-- Remember Me -->
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox"
-                       class="rounded border-zinc-300 text-sky-600 shadow-sm focus:ring-sky-500" name="remember">
+                <input id="remember" name="remember" type="checkbox"
+                       class="rounded border-zinc-300 text-sky-600 shadow-sm focus:ring-sky-500" >
                 <span class="ms-2 text-sm text-zinc-600">{{ __('Remember me') }}</span>
             </label>
         </div>

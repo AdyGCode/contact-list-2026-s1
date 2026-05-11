@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Models\Topic;
@@ -8,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends Factory<Topic>
  */
-class TopicFactory extends Factory
+final class TopicFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +20,9 @@ class TopicFactory extends Factory
     public function definition(): array
     {
         return [
-                'name' => fake()->word(),
-                'description' => fake()->sentence(),
-                'available' => fake()->boolean(0.5),
-            ];
+            'name' => fake()->word(),
+            'description' => fake()->sentence(),
+            'available' => fake()->boolean(0.5),
+        ];
     }
 }

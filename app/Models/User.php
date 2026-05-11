@@ -1,16 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
+use Database\Factories\UserFactory;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
+use Illuminate\Support\Stringable;
 
-class User extends Authenticatable
+final class User extends Authenticatable implements MustVerifyEmail
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
+    /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 
     /**
@@ -35,6 +39,16 @@ class User extends Authenticatable
     ];
 
     /**
+     * Return the user's initials
+     *
+     * @return Stringable
+     */
+    public function initials()
+    {
+        return Str::of($this->name)->initials();
+    }
+
+    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
@@ -45,16 +59,5 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-
-    /**
-     * Return the user's initials
-     *
-     * @return \Illuminate\Support\Stringable
-     */
-    public function initials()
-    {
-        return Str::of($this->name)->initials();
     }
 }

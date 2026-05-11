@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests\Admin;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTopicRequest extends FormRequest
+final class StoreTopicRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,15 +29,15 @@ class StoreTopicRequest extends FormRequest
                 'required',
                 'string',
                 'max:16',
-                'unique:topics'
+                'unique:topics',
             ],
             'description' => [
                 'nullable',
-                'string'
+                'string',
             ],
             'available' => [
                 'required',
-                'boolean'
+                'boolean',
             ],
         ];
     }
@@ -53,7 +55,7 @@ class StoreTopicRequest extends FormRequest
 
     protected function prepareForValidation(): void
     {
-        if (!$this->filled('available')) {
+        if ( ! $this->filled('available')) {
             $this->merge([
                 'available' => false,
             ]);
@@ -64,5 +66,4 @@ class StoreTopicRequest extends FormRequest
     {
         /** do nothing */
     }
-
 }

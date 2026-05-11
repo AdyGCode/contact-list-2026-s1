@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
 
     /*
@@ -45,7 +47,6 @@ return [
 
     'version' => env('APP_VERSION', '0.0.0-dev'),
     'codename' => env('APP_CODENAME', 'ancient ant'),
-
 
     /*
     |--------------------------------------------------------------------------

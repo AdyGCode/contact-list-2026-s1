@@ -25,3 +25,5 @@ Thumbs.db
 pnpm-lock.yaml
 composer.lock
 laradumps.yaml
+/storage/coverage/
+/public/coverage/

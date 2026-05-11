@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests\Admin;
 
 use App\Models\Topic;
 use Illuminate\Foundation\Http\FormRequest;
 
-class DestroyTopicRequest extends FormRequest
+final class DestroyTopicRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,7 +16,6 @@ class DestroyTopicRequest extends FormRequest
     {
         return auth()->check();
     }
-
 
     public function rules(): array
     {
@@ -36,9 +37,8 @@ class DestroyTopicRequest extends FormRequest
     {
         parent::validateResolved();
 
-        if (!$this->route('topic') instanceof Topic) {
+        if ( ! $this->route('topic') instanceof Topic) {
             abort(404, 'Topic not found');
         }
     }
-
 }

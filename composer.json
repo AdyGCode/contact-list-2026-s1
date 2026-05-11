@@ -10,20 +10,21 @@
     "license": "MIT",
     "require": {
         "php": "^8.4",
-        "laravel/framework": "^13.0",
+        "laravel/framework": "^13.7",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^3.0"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.23",
+        "fakerphp/faker": "^1.24",
         "laradumps/laradumps": "^5.3",
         "laradumps/laradumps-core": "^4.0",
-        "laravel/pail": "^1.2.2",
-        "laravel/pint": "^1.24",
-        "laravel/sail": "^1.41",
+        "larastan/larastan": "^3.9",
+        "laravel/pail": "^1.2.5",
+        "laravel/pint": "^1.27",
+        "laravel/sail": "^1.53",
         "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^8.6",
-        "pestphp/pest": "^4.4",
+        "nunomaduro/collision": "^8.9.3",
+        "pestphp/pest": "^4.7",
         "pestphp/pest-plugin-browser": "^4.0",
         "pestphp/pest-plugin-laravel": "^4.1"
     },
@@ -88,8 +89,19 @@
             "Composer\\Config::disableProcessTimeout",
             "pnpm dlx  concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74,#74fdc5\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" \"mailpit --smtp=0.0.0.0:2525\" --names=server,queue,logs,vite,mailpit"
         ],
+        "lint": [
+            "pint --parallel"
+        ],
+        "lint:check": [
+            "pint --parallel --test"
+        ],
+        "ci:check": [
+            "Composer\\Config::disableProcessTimeout",
+            "@test"
+        ],
         "test": [
             "@php artisan config:clear --ansi",
+            "@lint:check",
             "@php artisan test"
         ],
         "phpstan": [
@@ -108,6 +120,9 @@
         "post-root-package-install": "Executes automatically ONLY main Laravel package installation",
         "post-create-project-cmd": "Executes automatically ONLY after initial create project"
     },
+    "pre-package-uninstall": [
+        "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"
+    ],
     "extra": {
         "laravel": {
             "dont-discover": []

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
@@ -7,12 +9,13 @@ use App\Http\Requests\StoreContactUsRequest;
 use App\Models\Message;
 use App\Models\Topic;
 
-class ContactUsController extends Controller
+final class ContactUsController extends Controller
 {
     public function index()
     {
         // Get the topics
         $topics = Topic::all();
+
         // return the contact-us view with the topics
         return view('web.static.contact-us')
             ->with('topics', $topics);
@@ -27,7 +30,6 @@ class ContactUsController extends Controller
     {
         // Validate data
         $validated = $request->validated();
-
 
         // Store contact message
         Message::create([

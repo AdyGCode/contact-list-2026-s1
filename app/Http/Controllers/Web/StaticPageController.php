@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 
-class StaticPageController extends Controller
+final class StaticPageController extends Controller
 {
     /**
      * Display the Site Welcome / Index page

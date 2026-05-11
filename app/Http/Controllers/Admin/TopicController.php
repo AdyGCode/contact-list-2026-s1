@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -8,7 +10,7 @@ use App\Http\Requests\Admin\StoreTopicRequest;
 use App\Http\Requests\Admin\UpdateTopicRequest;
 use App\Models\Topic;
 
-class TopicController extends Controller
+final class TopicController extends Controller
 {
     /**
      * Display a listing of the topic.
@@ -73,6 +75,7 @@ class TopicController extends Controller
     {
         $validated = $request->validated();
         $topic->update($validated);
+
         return redirect(route('admin.topics.index'))
             ->with('message', 'updated');
     }
