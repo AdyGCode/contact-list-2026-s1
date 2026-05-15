@@ -19,6 +19,7 @@ final class Topic extends Model
     {
         return $this->hasMany(Message::class);
     }
+
     /**
      * Mass assignable attributes (table fields)
      * Hidden from serialisation attributes (fields)
